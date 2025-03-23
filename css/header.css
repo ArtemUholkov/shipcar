@@ -39,6 +39,7 @@ header {
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
+  background: white;
 }
 .wrap_right_head {
   display: flex;

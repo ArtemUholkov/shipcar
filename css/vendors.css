@@ -1,0 +1,131 @@
+.logos {
+  width: 100%;
+  padding-top: 170px;
+  padding-top: 110px;
+  overflow: hidden;
+  padding-bottom: 110px;
+}
+
+.title_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 64px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.section_title {
+  color: var(--Blue, #162150);
+  font-family: 'Segoe UI';
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+.title_separator {
+  display: block;
+  width: 72.698px;
+  height: 4px;
+  background-color: var(--Blue, #162150);
+}
+.logos_wrapper {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 120px;
+  width: 100%;
+  overflow: hidden;
+  animation: scrollLogos 15s linear infinite; /* Animation for scrolling */
+}
+
+.logos_logo {
+  width: 250px;
+  height: 108px;
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0); /* Start at the beginning */
+  }
+  50% {
+    transform: translateX(-50%); /* Move to the left end */
+  }
+  100% {
+    transform: translateX(0); /* Return back to the starting position */
+  }
+}
+
+/* Ensure the wrapper can hold all the logos */
+.logos_wrapper {
+  display: flex;
+  gap: 20px;
+  width: 4000px; /* Make the wrapper twice the width to show all logos */
+}
+
+.logos_wrapper {
+  animation: scrollLogos 20s linear infinite;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.logos_vendors {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.logos-subtitle {
+  color: var(--grey, #9f9f9f);
+  font-family: 'Segoe UI';
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 24px;
+}
+.logos-subtitle-separator {
+  width: 72.698px;
+  height: 4px;
+  display: block;
+  background-color: var(--grey, #9f9f9f);
+}
+.vendors_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+@media (max-width: 768px) {
+  .logos {
+    padding-bottom: 80px;
+  }
+  .vendors_wrapper img {
+    height: 71px;
+    width: auto;
+  }
+  .logos_logo {
+    height: 71px;
+    width: auto;
+  }
+  .logos_wrapper {
+    animation: scrollLogos 30s linear infinite;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 64px;
+  }
+  .section_title {
+    font-size: 28px;
+  }
+  .logos-subtitle {
+    font-size: 24px;
+  }
+  .logos {
+    padding-top: 82px;
+  }
+  .title_wrapper {
+    margin-bottom: 24px;
+  }
+  .logos-subtitle-separator {
+    margin-bottom: 20px;
+  }
+}

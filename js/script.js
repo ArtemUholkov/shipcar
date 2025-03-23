@@ -36,4 +36,4 @@ function burgerHandler(e) {
   burger.classList.toggle('active');
 }
 
-var items = document.querySelectorAll('.why_item');
+document.querySelector('.why_item_button').style.cursor = 'pointer';

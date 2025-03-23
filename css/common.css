@@ -163,6 +163,7 @@ table {
 /* Apply fonts to the body or specific elements */
 body {
   font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
 }
 
 /*COLOR VARIABLES START*/
@@ -178,7 +179,7 @@ body {
 
 /*COMMONT STYLES START*/
 html {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 .main_button {
   display: flex;
