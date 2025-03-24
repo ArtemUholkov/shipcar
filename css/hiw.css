@@ -1,0 +1,132 @@
+.hiw {
+  width: 100%;
+  position: relative;
+  top: -50px;
+}
+.hiw_top {
+  border-radius: 30px;
+  background: var(--Black, #080d23);
+  padding: 88px 20px 120px 20px;
+}
+
+.hiw_top_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.hiw .whom_uppertitle {
+  color: white;
+}
+.hiw .section_title {
+  color: white;
+}
+.hiw .title_separator {
+  background-color: white;
+}
+
+.hiw_button {
+  width: 250px;
+}
+.hiw_bottom {
+  border-radius: 30px;
+  background: #f2f2f2;
+  padding: 88px 20px;
+  position: relative;
+  top: -43px;
+}
+.hiw_bot_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.hiw_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+}
+.hiw_item_number {
+  color: var(--Blue, #162150);
+  font-family: Inter;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.hiw_item_texts_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+}
+.hiw_item_title {
+  color: var(--Blue, #162150);
+  /* body big semi bold */
+  font-family: 'Segoe UI';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 26px */
+  letter-spacing: 0.6px;
+}
+.hiw_item_text {
+  color: var(--Black, #080d23);
+  font-family: 'Segoe UI';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 140%;
+  max-width: 280px;
+}
+.hiw_mob_button {
+  display: none;
+}
+.hiw_item_number,
+.hiw_item_title {
+  transition: color 0.5s ease-in-out;
+}
+@media (max-width: 1350px) {
+  .hiw_bot_wrapper {
+    justify-content: center;
+  }
+}
+@media (max-width: 1150px) {
+  .hiw_button {
+    display: none;
+  }
+  .hiw_mob_button {
+    display: flex;
+    width: 350px;
+    align-self: center;
+    margin: 0 auto;
+    margin-top: 42px;
+  }
+  .hiw_item {
+    gap: 25px;
+  }
+  .hiw_item {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 550px) {
+  .hiw_item {
+    width: 350px;
+  }
+  .hiw {
+    top: 40px;
+  }
+  .hiw_top {
+    padding-top: 32px;
+    padding-bottom: 80px;
+  }
+  .hiw_bottom {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}

@@ -71,15 +71,23 @@ h1 {
   max-width: 529px;
   margin-bottom: 64px;
 }
-.main_button {
-}
+
 .ms_button {
   max-width: 350px;
   width: 100%;
 }
+.main {
+  transition: height 0.5s ease-in-out, position 0.5s ease-in-out;
+}
+
+.main_wrapper {
+  position: relative; /* Ensure it has a position to animate */
+  bottom: 0; /* Set an initial bottom value */
+  transition: bottom 0.5s ease-in-out;
+}
 @media (max-width: 768px) {
   .main {
-    height: 805px;
+    height: 90vh;
     justify-content: flex-end;
     padding-bottom: 39px;
   }

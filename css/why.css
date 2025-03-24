@@ -2,8 +2,6 @@
   width: 100%;
   padding-top: 200px;
   padding-bottom: 200px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .why_wrapper {
@@ -11,6 +9,8 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .why .title_separator {
@@ -27,7 +27,9 @@
   flex-direction: column;
   gap: 32px;
 }
-
+.why .section_title {
+  max-width: 400px;
+}
 .item_texts_wrapper {
   display: flex;
   flex-direction: row;
@@ -71,16 +73,17 @@
   line-height: 140%;
   max-height: 0;
   opacity: 0;
+  transition: all 0.6s;
 }
 .why_item_button {
   color: var(--Blue, #162150);
-
+  z-index: 99;
   font-family: 'Segoe UI';
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
-  /* transition: all 0.3s; */
+  transition: all 0.3s;
 
   cursor: pointer;
   display: inline-flex; /* Ensures better interaction behavior */
@@ -89,13 +92,64 @@
   user-select: none; /* Prevents text cursor */
 }
 .why_item_button:hover {
-  opacity: 0.7;
-  /* transition: all 0.3s; */
+  opacity: 1;
+  transition: all 0.3s;
   cursor: pointer;
-  pointer-events: auto;
-  cursor: pointer !important;
-  background: red !important;
+  color: #ed4530;
 }
-.why_item_button svg {
-  pointer-events: none;
+.less {
+  display: none;
+}
+.activated .more {
+  display: none;
+}
+.activated .less {
+  display: flex;
+}
+.activated .why_item_text {
+  max-height: 160px;
+  opacity: 1;
+  transition: all 0.6s;
+}
+
+.why_mob_button {
+  display: none;
+}
+@media (max-width: 1150px) {
+  .why_wrapper {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .why_button {
+    display: none;
+  }
+  .why_mob_button {
+    display: flex;
+    align-self: center;
+    width: 350px;
+  }
+  .why .title_separator {
+    margin-bottom: 0;
+  }
+  .why_right {
+    max-width: 100%;
+  }
+  .why_wrap_icon {
+    width: 73px;
+    height: 73px;
+    padding: 15.5px 16.5px 17.5px 16.5px;
+  }
+  .why_wrap_icon img {
+    width: 40px;
+    height: 40px;
+  }
+  .why_item_title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .why {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
 }
