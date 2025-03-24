@@ -60,7 +60,19 @@
   max-width: 640px;
   gap: 20px;
 }
-
+.item-hover-n {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.item-hover-n:hover {
+  border-radius: 8px;
+  background: var(--white, #fff);
+  transition: all 0.3s;
+}
 @media (max-width: 1200px) {
   .proud_wrapper {
     flex-direction: column;
@@ -71,9 +83,13 @@
   .proud_wrapper {
     align-items: flex-start;
   }
-  .proud-logo {
+  .item-hover-n {
     width: 110px;
     height: 109px;
+  }
+  .proud-logo {
+    width: auto;
+    height: 80px;
   }
   .proud_right {
     gap: 5px;

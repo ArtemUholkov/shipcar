@@ -146,26 +146,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const reviews = document.querySelectorAll('.reviews_item');
   const button = document.querySelector('.reviews_button');
   let reviewsExpanded = false;
-  let lastScrollPosition = 0;
 
   button.addEventListener('click', function (e) {
     e.preventDefault();
     const hiddenReviews = Array.from(reviews).slice(3);
 
     reviewsExpanded = !reviewsExpanded;
-    lastScrollPosition = window.scrollY;
 
     hiddenReviews.forEach((review) => (review.style.display = reviewsExpanded ? 'flex' : 'none'));
     button.textContent = reviewsExpanded ? 'Read Less' : 'Read More';
-  });
-
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > lastScrollPosition + 200 && reviewsExpanded) {
-      const hiddenReviews = Array.from(reviews).slice(3);
-      hiddenReviews.forEach((review) => (review.style.display = 'none'));
-      button.textContent = 'Read More';
-      reviewsExpanded = false;
-    }
   });
 });
 
@@ -196,33 +185,43 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+let lastOpenedReview = null;
+let lastOpenedPosition = 0;
+
 function toggleReview(element) {
   const fullText = element.previousElementSibling;
   const shortText = fullText.previousElementSibling;
 
   if (fullText.style.display === 'none' || fullText.style.display === '') {
+    // Open the review
     fullText.style.display = 'inline';
     shortText.style.display = 'none';
-    element.textContent = 'see less';
+    element.textContent = ' see less';
+
+    // Track last opened review and scroll position
+    lastOpenedReview = { fullText, shortText, button: element };
+    lastOpenedPosition = window.scrollY;
   } else {
-    fullText.style.display = 'none';
-    shortText.style.display = 'inline';
-    element.textContent = '... see more';
+    // Close the review
+    closeReview(fullText, shortText, element);
   }
 }
 
-// Hide expanded reviews on scroll beyond last open position + 200px
+function closeReview(fullText, shortText, button) {
+  fullText.style.display = 'none';
+  shortText.style.display = 'inline';
+  button.textContent = '... see more';
+  lastOpenedReview = null;
+}
+
+// Listen for scroll and auto-close after scrolling 200px
 window.addEventListener('scroll', function () {
-  document.querySelectorAll('.review_full_text').forEach((fullText) => {
-    fullText.style.display = 'none';
-  });
-  document.querySelectorAll('.review_short_text').forEach((shortText) => {
-    shortText.style.display = 'inline';
-  });
-  document.querySelectorAll('.review_toggle').forEach((toggleBtn) => {
-    toggleBtn.textContent = '... see more';
-  });
+  if (lastOpenedReview && window.scrollY > lastOpenedPosition + 200) {
+    closeReview(lastOpenedReview.fullText, lastOpenedReview.shortText, lastOpenedReview.button);
+  }
 });
+
+// Hide expanded reviews on scroll beyond last open position + 200px
 
 //
 function toggleTextOnClick(event) {
