@@ -6,7 +6,7 @@
 .hiw_top {
   border-radius: 30px;
   background: var(--Black, #080d23);
-  padding: 88px 20px 120px 20px;
+  padding: 88px 0 120px 0;
 }
 
 .hiw_top_wrapper {
@@ -14,6 +14,8 @@
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .hiw .whom_uppertitle {
@@ -32,7 +34,7 @@
 .hiw_bottom {
   border-radius: 30px;
   background: #f2f2f2;
-  padding: 88px 20px;
+  padding: 88px 0;
   position: relative;
   top: -43px;
 }
@@ -43,6 +45,8 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .hiw_item {
   display: flex;

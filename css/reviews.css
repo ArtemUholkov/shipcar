@@ -74,7 +74,9 @@
   min-height: 250px;
   gap: 20px;
 }
-.rev_item_text {
+.rev_item_text,
+.short-text,
+.full-text {
   color: var(--Black, #080d23);
   font-family: 'Segoe UI';
   font-size: 16px;
@@ -187,5 +189,9 @@
   .reviews {
     padding-top: 82px;
     padding-bottom: 0;
+  }
+  .reviews_button {
+    width: 350px;
+    margin: 0 auto;
   }
 }
