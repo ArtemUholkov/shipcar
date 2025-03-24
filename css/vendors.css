@@ -62,7 +62,7 @@
 }
 
 .logos_wrapper {
-  animation: scrollLogos 20s linear infinite;
+  animation: scrollLogos 30s linear infinite;
   display: flex;
   flex-direction: row;
   gap: 20px;
